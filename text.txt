@@ -1,2 +1,0 @@
-git remote add origin https://github.com/gemma1028/gemma1028.github.io.git
-git@github.com:gemma1028/gemma1028.github.io.git
