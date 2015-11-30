@@ -4,15 +4,362 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap Sample</title>
+    <meta name="keywords" content="techacademy,ruby,rails">
+    <title>My-Portforio</title>
     <!-- BootstrapのCSS読み込み -->
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- jQuery読み込み -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- BootstrapのJS読み込み -->
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+    
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      
+      body {
+        font-family: YuGothic, "游ゴシック", "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
+        background-color: #fff;
+        font-size: 14px;
+      }
+      
+      header {
+        background-image: url("bg.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding-bottom: 100px;
+      }
+      
+      #logo {
+        padding: 1px 0;
+        text-align: center;
+      }
+      
+      #logo img {
+        max-width: 150px;
+        border: 5px solid #fff;
+        border-radius: 10px;
+      }
+      
+      #logo h1 {
+        letter-spacing: 0.15em;
+        color: #fff;
+        text-shadow: 2px 2px 0px #4682b4;
+      }
+
+      nav {
+        margin: 0 0 30px 0;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #fff;
+      }
+
+      nav ul {
+        margin: 0 10px;
+        padding: 0;
+      }
+
+      nav ul li {
+        margin: 0 20px;
+        display: inline-block;
+      }
+
+      nav ul li a {
+        padding: 15px 10px;
+        text-decoration: none;
+        color: #999;
+        font-weight: bold;
+      }
+
+      nav ul li a.selected {
+        color: #000;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: -100px auto 0;
+        background-color: #fff;
+      }
+
+      section {
+        padding: 30px 20px;
+      }
+
+      section h2 {
+        padding: 10px 0 20px 0;
+        text-align: center;
+        letter-spacing: 0.15em;
+      }
+
+      body {
+        font-size: 14px;
+      }
+      
+      .navbar {
+        border-radius: 0; 
+      }
+      
+      .row {
+        margin-bottom: 50px;
+      }
+      
+      .icon {
+        text-align: center;
+      }
+      
+      .icon .glyphicon {
+        margin-bottom: 10px;
+        font-size: 30px;
+        color: #4682b4;
+      }
+      
+      .content h2 {
+        margin-top: 0;
+        padding-bottom: 15px;
+      }
+      
+      .content p {
+        margin-bottom: 30px;
+      }
+      
+      footer {
+        border-top: 1px solid#e7e7e7;
+        background-color: #f8f8f8;
+        text-align: center;
+      }
+      
+      .copyright {
+        padding: 20px 0;
+        font-size: 12px;
+        color: #666;
+      }
+      
+      @media (max-width: 768px) {
+        body {
+          font-size: 12px;
+        }
+        h1 {
+          font-size: 30px;
+        }
+        h2 {
+          font-size: 24px;
+        }
+        .panel-title {
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <h1>Hello, world!</h1>
+  
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#site-menu">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">My-Portforio</a>
+        </div>
+      <div class="collapse navbar-collapse" id="site-menu">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#about">About</a></li>
+          <li class="dropdown">
+            <a href="application" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              Application
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="#application"><span class="glyphicon glyphicon-folder-open" aria-hidden="true"> Portforio</span></a></li>
+              <li><a href="#application"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"> Message-Board</span></a></li>
+              <li><a href="#application"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"> Twitter-Clone</span></a></li>
+              <li><a href="#application"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"> Mono-List</span></a></li>
+              <li><a href="#application"><span class="glyphicon glyphicon-cloud" aria-hidden="true"> Original-Service</span></a></li>
+            </ul>
+          <li><a href="#link">Link</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group hidden-sm">
+				        <input type="text" class="form-control" placeholder="Search keyword">
+	            </div>
+				      <button type="submit" class="btn btn-default">Search</button>
+		        </form>
+		      </li>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="logo">
+      <img src="boss_face.jpg" alt="" />
+      <h1>Hideki Suzuki</h1>
+    </div>
+  </header>
+
+  <div class=container>
+    <div class="page-header">
+      <div class="row">
+        <div class="icon col-sm-3 hidden-xs">
+          <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+          <div class="icon-caption">About</div>
+        </div>
+        <div class="content col-sm-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"  id="about">
+                About
+              </h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><span class="glyphicon glyphicon-cog" aria-hidden="true"> Name</span></th>
+                    <td>Hideki Suzuki</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-cog" aria-hidden="true"> Work</span></th>
+                    <td>Corporate management</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-cog" aria-hidden="true"> Address</span></th>
+                    <td>Oasaka,Japan</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-cog" aria-hidden="true"> Purpose</span></th>
+                    <td>Homebrew Web Applications</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="icon col-sm-3 hidden-xs">
+          <span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>
+          <div class="icon-caption">Application</div>
+        </div>
+        <div class="content col-sm-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title" id="application">
+                Application
+              </h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><span class="glyphicon glyphicon-folder-open" aria-hidden="true"> Portforio</span></th>
+                    <td><a href="https://gemma1028.github.io/" target="_blank">https://gemma1028.github.io/</a></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"> Message-Board</span></th>
+                    <td>coming soon...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"> Twitter-Clone</span></th>
+                    <td>coming soon...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"> Mono-List</span></th>
+                    <td>coming soon...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row"><span class="glyphicon glyphicon-cloud" aria-hidden="true"> Original-Service</span></th>
+                    <td>coming soon...</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      <div class="icon col-sm-3 hidden-xs">
+        <span class="glyphicon glyphicon-link" aria-hidden="true"></span>
+        <div class="icon-caption">Link</div>
+      </div>
+        <div class="content col-sm-8">
+          <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title" id="application">
+                Link
+              </h3>
+            </div>
+            <div class="table-responsive">
+              <table class="table table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th><img src="github-icon.jpg" width="40"/><a href="https://github.com/gemma1028/gemma1028.github.io" target="_blank"> GitHub</a></th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      <div class="icon col-sm-3 hidden-xs">
+        <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+        <div class="icon-caption">Contact</div>
+      </div>
+      <div class="content col-sm-8">
+        <h2 id="contact">Contact</h2>
+        <div class="alert alert-danger" role="alert">
+        	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+          To check the privacy policy , on your consent , please press the send button .
+        </div>
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="inputName" class="col-md-2 control-label">Name</label>
+            <div class="col-md-10">
+              <input type="text" class="form-control" id="inputName" placeholder="Ex. Taro Yamada">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputEmail" class="col-md-2 control-label">Email Address</label>
+            <div class="col-md-10">
+              <input type="email" class="form-control" id="inputEmail" placeholder="Ex. taro.yamada@githum.jp">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputTel" class="col-md-2 control-label">Phone Number</label>
+            <div class="col-md-10">
+              <input type="tel" class="form-control" id="inputTel" placeholder="Ex. 0123456789">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputContent" class="col-md-2 control-label">Content of inquiry</label>
+            <div class="col-md-10">
+              <textarea class="form-control" id="inputContent" rows="4" placeholder="Please write the details"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox">agree to the privacy policy
+                  <a href="policy.html" onClick="window.open('policy.html','About the handling of personal information','width=400,height=500,menubar=no,toolbar=no,scrollbars=yes'); return false;" target="_blank">Please check here</a>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default btn-primary btn-block">Transmission</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="copyright"><p class="text-danger">Copyright &copy2015 Hideki Suzuki All Rights Reserved.</p></div>
+    </footer>
   </body>
 </html>
+
